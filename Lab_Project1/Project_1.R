@@ -73,6 +73,11 @@ cleaned_data$Course[is.na(cleaned_data$Course)] <- "Unknown"
 
 cleaned_data$Last_Name[cleaned_data$Last_Name == ""] <- "Unknown"
 
+# Remove row where student ID is missing
+cleaned_data <- cleaned_data[
+  !is.na(cleaned_data$Student_ID) &
+    cleaned_data$Student_ID != "", ]
+
 
 # STEP 8: HANDLE OUTLIERS USING IQR (AGE)
 Q1 <- quantile(cleaned_data$Age, 0.25)
@@ -128,4 +133,5 @@ sum(duplicated(cleaned_data))
 boxplot(cleaned_data$Age)
 
 # Check Row Count
+
 nrow(cleaned_data)
