@@ -1,0 +1,10 @@
+std.data <- data.frame( 
+  std_name = c ("Anastasia", "Dima", "Michael", "Matthew", "Laura", "Kevin", "Jonas"), 
+  std_score = c(12.5, 9.0, 16.5, 12.0, 9.0, 8.0, 19.0), 
+  attempts = c(1, 3, 2, 3, 2, 1, 2) 
+)
+
+# Add the "qualify" column. 
+std.data$qualify <- c("yes","no","yes","no","no","no", "yes") 
+v <- std.data 
+print(v) 
